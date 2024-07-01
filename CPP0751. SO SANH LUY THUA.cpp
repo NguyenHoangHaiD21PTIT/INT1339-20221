@@ -54,3 +54,4 @@ int main(){
         for(int &i : y) cin >> i;
         cout << calc(x, y, m, n) << endl;
     }
+}
