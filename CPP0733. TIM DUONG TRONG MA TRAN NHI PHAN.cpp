@@ -19,7 +19,7 @@ int BFS(int i, int j) {
         for (int k = 0; k < 4; k++) {
             int i1 = x + dx[k];
             int j1 = y + dy[k];
-            if (i1 >= 1 && i1 <= n && j1 >= 1 && j1 <= m && a[i1][j1] && !visited[i1][j1]) {
+            if (i1 >= 0 && i1 < n && j1 >= 0 && j1 < m && a[i1][j1] && !visited[i1][j1]) {
                 d[i1][j1] = d[x][y] + 1;
                 q.push({i1, j1});
                 visited[i1][j1] = 1;
@@ -34,21 +34,13 @@ int main() {
     cin >> t;
     while (t--) {
         cin >> n >> m >> sx >> sy >> ex >> ey;
-        for (int i = 1; i <= n; ++i) {
-            for (int j = 1; j <= m; ++j) {
-                cin >> a[i][j];
-            }
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) cin >> a[i][j];
         }
         memset(visited, 0, sizeof(visited));
         memset(d, 0, sizeof(d));
-        if (sx == ex && sy == ey) {
-            cout << 0 << endl;
-        } else if (a[sx][sy] && a[ex][ey]) {
-            int result = BFS(sx, sy);
-            cout << result << endl;
-        } else {
-            cout << -1 << endl;
-        }
+        if (sx == ex && sy == ey) cout << 0 << endl;
+        else if (a[sx][sy] && a[ex][ey]) cout << BFS(sx, sy)<< endl;
+        else cout << -1 << endl;
     }
-    return 0;
 }
