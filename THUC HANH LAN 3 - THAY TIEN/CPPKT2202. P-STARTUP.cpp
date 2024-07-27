@@ -20,9 +20,10 @@ int main(){
 		a[i].diem=a[i].share*7+a[i].tt*3;
 	}
 	sort(a,a+n,cmp);
-	for(int i=0;i<7;i++){
-		cout<<a[i].ma<<" ";
-	}
+	vector<int>res;
+	for(int i = 0;i<7;i++) res.push_back(a[i].ma);
+	sort(res.begin(), res.end());
+	for(int x: res) cout<<x<<" ";
 }
 /*case:
 10
