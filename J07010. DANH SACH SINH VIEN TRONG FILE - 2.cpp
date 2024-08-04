@@ -48,6 +48,7 @@ string toString(const SinhVien &sv) {
 }
 
 int main() {
+    ifstream cin("SV.in");
     int n;
     cin >> n;
     cin.ignore();
