@@ -8,6 +8,7 @@ void VietHoa(string &x){//Chuẩn hoá từng từ trong tên
 
 int main(){
     string s;
+    ifstream cin("DATA.in");
     while(getline(cin, s)){
         if(s=="END") break;
         stringstream ss(s);
