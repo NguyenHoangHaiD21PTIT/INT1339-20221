@@ -10,6 +10,7 @@ bool cmp(MonHoc a, MonHoc b){
 }
 
 int main(){
+    ifstream cin("MONHOC.in");
     int n;
     cin>>n;
     cin.ignore();
